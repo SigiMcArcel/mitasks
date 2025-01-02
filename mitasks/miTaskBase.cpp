@@ -1,6 +1,6 @@
 #include "miTaskBase.h"
 
-void mitasks::miTaskBase::timerEventOccured(miutils::TimerEventListenerObject, const std::string& name)
+bool mitasks::miTaskBase::timerEventOccured(miutils::TimerEventListenerObject, const std::string& name)
 {
 	for (auto module : _ModuleList)
 	{
@@ -14,6 +14,7 @@ void mitasks::miTaskBase::timerEventOccured(miutils::TimerEventListenerObject, c
 	{
 		module->writeOutputs();
 	}
+	return false;
 }
 
 void mitasks::miTaskBase::init()

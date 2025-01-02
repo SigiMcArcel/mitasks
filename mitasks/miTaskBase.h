@@ -52,7 +52,7 @@ namespace mitasks
 
 		}
 
-		virtual void timerEventOccured(miutils::TimerEventListenerObject, const std::string& name) override;
+		virtual bool timerEventOccured(miutils::TimerEventListenerObject, const std::string& name) override;
 		void init();
 		void deinit();
 		void start();
